@@ -1,0 +1,25 @@
+# Bun cache
+bun/
+bun-install/
+bun.lockb
+
+# Node modules
+node_modules/
+
+# VSCode
+.vscode/
+
+# OS and build
+.DS_Store
+Thumbs.db
+dist/
+build/
+*.log
+*.out
+*.exe
+*.test
+
+# Go build files
+bin/
+*.mod
+*.sum
