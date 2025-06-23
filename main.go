@@ -1,21 +1,23 @@
 package main
 
 import (
-    "flashbots-backend/handlers"
+    "MEV/handlers"
+    "MEV/utils"
     "github.com/gin-gonic/gin"
-    "github.com/joho/godotenv"
     "log"
 )
 
 func main() {
-    err := godotenv.Load()
-    if err != nil {
-        log.Fatal("Error loading .env file")
-    }
+    // Load environment variables using your utils function
+    utils.LoadEnv()
 
+    // Initialize Gin router
     r := gin.Default()
+
+    // Setup POST route for Flashbots MEV-protected transaction
     r.POST("/send-mev-protected-tx", handlers.SendMEVProtectedTx)
 
-    log.Println("Server running on :8080")
+    // Start server
+    log.Println("🚀 Backend running on http://localhost:8080")
     r.Run(":8080")
 }
