@@ -18,6 +18,7 @@ func main() {
     r.POST("/send-mev-protected-tx", handlers.SendMEVProtectedTx)
 
     // Start server
-    log.Println("🚀 Backend running on http://localhost:8080")
+    log.Println("🚀MEV  Backend running on http://localhost:8080")
     r.Run(":8080")
+    
 }
